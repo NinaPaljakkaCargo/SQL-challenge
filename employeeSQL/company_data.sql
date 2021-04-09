@@ -95,3 +95,11 @@ SELECT "Departments".dept_no, "Departments".dept_name,
 FROM "Departments", "Managers", "Employees"
 WHERE "Departments".dept_no = "Managers".dept_no and 
 "Managers".emp_no = "Employees".emp_no;
+
+/* print department of each employee including: 
+emp_no, last name, first name, department name*/
+SELECT "Dpt_Employees".emp_no, "Employees".last_name, 
+"Employees".first_name, "Departments".dept_name
+FROM "Dpt_Employees", "Employees", "Departments"
+WHERE "Dpt_Employees".emp_no = "Employees".emp_no and 
+"Dpt_Employees".dept_no = "Departments".dept_no;
