@@ -125,3 +125,7 @@ SELECT "Employees".emp_no, "Employees".last_name, "Employees".first_name,
 FROM "Employees", "Departments"
 WHERE "Departments".dept_name = 'Sales' or 
 "Departments".dept_name = 'Development';
+
+/* print, in descending order, how many employees share each last
+name*/
+
