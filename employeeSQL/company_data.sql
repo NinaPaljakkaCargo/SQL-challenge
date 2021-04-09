@@ -6,6 +6,8 @@ CREATE TABLE "Titles" (
      )
 );
 
+SELECT * FROM "Titles";
+
 CREATE TABLE "Employees" (
     "emp_no" int   NOT NULL,
     "emp_title_id" VARCHAR NOT NULL,
@@ -18,6 +20,8 @@ CREATE TABLE "Employees" (
         "emp_no"
      )
 );
+
+SELECT * FROM "Employees";
 
 CREATE TABLE "Departments" (
     "dept_no" VARCHAR NOT NULL,
@@ -70,3 +74,24 @@ REFERENCES "Employees" ("emp_no");
 
 ALTER TABLE "Dpt_Employees" ADD CONSTRAINT "fk_Dpt_Employees_dept_no" FOREIGN KEY("dept_no")
 REFERENCES "Departments" ("dept_no");
+
+
+/* print employee info: first and last name, emp_no, sex, salary*/
+SELECT  "Employees".emp_no, "Employees".last_name, "Employees".first_name,
+"Employees".sex, "Salaries".salary
+FROM "Employees", "Salaries"
+WHERE "Employees".emp_no = "Salaries".emp_no;
+
+/* print first name, last name, and hire date for employees hired
+in 1986*/
+SELECT first_name, last_name, hire_date
+FROM "Employees"
+WHERE "Employees".hire_date >= 01/01/1986 and "Employees".hire_date < 12/31/1986;
+
+/* print manager of each department including: dept_no, dept_name,
+manager emp_no, last name, first name*/
+SELECT "Departments".dept_no, "Departments".dept_name, 
+"Managers".emp_no, "Employees".first_name, "Employees".last_name
+FROM "Departments", "Managers", "Employees"
+WHERE "Departments".dept_no = "Managers".dept_no and 
+"Managers".emp_no = "Employees".emp_no;
