@@ -110,3 +110,10 @@ SELECT "Employees".first_name, "Employees".last_name, "Employees".sex
 FROM "Employees"
 WHERE "Employees".first_name = 'Hercules' and "Employees".last_name 
 LIKE 'B%';
+
+/* print all employees in the Sales department, including:
+emp_no, last name, first name, and dept_name */
+SELECT "Employees".emp_no, "Employees".last_name, "Employees".first_name,
+"Departments".dept_name
+FROM "Employees", "Departments"
+WHERE "Departments".dept_name = 'Sales';
