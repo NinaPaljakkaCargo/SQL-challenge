@@ -82,7 +82,7 @@ SELECT  "Employees".emp_no, "Employees".last_name, "Employees".first_name,
 FROM "Employees", "Salaries"
 WHERE "Employees".emp_no = "Salaries".emp_no;
 
-/* print first name, last name, and hire date for employees hired
+/****HELP**** print first name, last name, and hire date for employees hired
 in 1986*/
 SELECT first_name, last_name, hire_date
 FROM "Employees"
@@ -103,3 +103,10 @@ SELECT "Dpt_Employees".emp_no, "Employees".last_name,
 FROM "Dpt_Employees", "Employees", "Departments"
 WHERE "Dpt_Employees".emp_no = "Employees".emp_no and 
 "Dpt_Employees".dept_no = "Departments".dept_no;
+
+/* print first name, last name, sex for all employees with 
+first name Hercules and last name starts with B*/
+SELECT "Employees".first_name, "Employees".last_name, "Employees".sex
+FROM "Employees"
+WHERE "Employees".first_name = 'Hercules' and "Employees".last_name 
+LIKE 'B%';
