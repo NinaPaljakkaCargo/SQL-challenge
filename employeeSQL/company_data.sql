@@ -128,4 +128,7 @@ WHERE "Departments".dept_name = 'Sales' or
 
 /* print, in descending order, how many employees share each last
 name*/
+SELECT last_name
+FROM "Employees" ORDER BY last_name DESC id asc;
+
 
