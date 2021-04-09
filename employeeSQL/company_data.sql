@@ -117,3 +117,11 @@ SELECT "Employees".emp_no, "Employees".last_name, "Employees".first_name,
 "Departments".dept_name
 FROM "Employees", "Departments"
 WHERE "Departments".dept_name = 'Sales';
+
+/* print all employees in the Sales and Development departments,
+including: emp_no, last name, first name, and department name*/
+SELECT "Employees".emp_no, "Employees".last_name, "Employees".first_name,
+"Departments".dept_name
+FROM "Employees", "Departments"
+WHERE "Departments".dept_name = 'Sales' or 
+"Departments".dept_name = 'Development';
