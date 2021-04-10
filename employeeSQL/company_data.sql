@@ -82,11 +82,11 @@ SELECT  "Employees".emp_no, "Employees".last_name, "Employees".first_name,
 FROM "Employees", "Salaries"
 WHERE "Employees".emp_no = "Salaries".emp_no;
 
-/****HELP**** print first name, last name, and hire date for employees hired
+/* print first name, last name, and hire date for employees hired
 in 1986*/
 SELECT first_name, last_name, hire_date
 FROM "Employees"
-WHERE "Employees".hire_date >= 01/01/1986 and "Employees".hire_date < 12/31/1986;
+WHERE "Employees".hire_date >= '01/01/1986' and "Employees".hire_date < '12/31/1986';
 
 /* print manager of each department including: dept_no, dept_name,
 manager emp_no, last name, first name*/
